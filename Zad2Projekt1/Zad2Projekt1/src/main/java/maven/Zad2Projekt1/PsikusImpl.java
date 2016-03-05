@@ -4,6 +4,13 @@ import java.util.Random;
 
 public class PsikusImpl implements Psikus {
 
+	private Integer liczba;
+	
+	public PsikusImpl(Integer liczba)
+	{
+		this.liczba = liczba;
+	}
+	
 	public Integer CyfroKrad(Integer liczba) {
 		String liczba_ciag = liczba.toString();
 		if(liczba_ciag.length() == 1)
@@ -25,13 +32,16 @@ public class PsikusImpl implements Psikus {
 	}
 
 	public Integer Heheszki(Integer liczba) {
-		// TODO Auto-generated method stub
+		Random r = new Random();
+		r.nextInt(liczba);
 		return null;
 	}
 	
-	public boolean Titit(Integer liczba) {
-		// TODO Auto-generated method stub
-		return true;
+	public boolean Titit(Integer liczba_dziel) {
+		if(liczba%liczba_dziel == 0)
+			return true;
+		else
+		return false;
 	}
 	
 	public Integer HultajChochla(Integer liczba) {
