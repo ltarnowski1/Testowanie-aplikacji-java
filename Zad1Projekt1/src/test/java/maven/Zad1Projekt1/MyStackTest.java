@@ -1,25 +1,18 @@
-package test;
+package maven.Zad1Projekt1;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.everyItem;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-import javax.swing.text.html.ListView;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-
-import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import test.MyStack;
+import junit.framework.TestCase;
+import maven.Zad1Projekt1.MyStack;
 
 public class MyStackTest {
 
@@ -39,6 +32,8 @@ public class MyStackTest {
 		stack.MyPush(2);
 		stack.MyPush(3);
 		assertThat(stack.getList(), contains(1,2,3));
+		for(int i = 0; i < 5; i++)
+			assertThat(stack.MyTop(),is(3));
 	}
 	
 	@Test
@@ -69,5 +64,4 @@ public class MyStackTest {
 	{
 		stack = null;
 	}
-
 }
