@@ -66,7 +66,14 @@ public class PsikusImpl implements Psikus {
 		}
 	}
 
-	public Integer Heheszki(Integer liczba) {
+	public Integer Heheszki(Integer liczba) throws NieudanyPsikusException
+	{	
+		if(liczba == 0)
+			throw new NieudanyPsikusException();
+		if(liczba < 0)
+		{
+			liczba = -liczba;
+		}	
 		return r.nextInt(liczba);
 	}
 	
@@ -77,8 +84,32 @@ public class PsikusImpl implements Psikus {
 		return false;
 	}
 	
-	public Integer HultajChochla(Integer liczba) {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer HultajChochla(Integer liczba) throws NieudanyPsikusException{
+		boolean czy_ujemna = false;
+		if(liczba < 0)
+		{
+			czy_ujemna = true;
+			liczba = -liczba;
+		}	
+		String liczba_ciag = liczba.toString();
+		StringBuilder sb = new StringBuilder(liczba_ciag);
+		if(liczba_ciag.length() < 2)
+			throw new NieudanyPsikusException();
+		else
+		{	
+			int liczba1 = r.nextInt(liczba_ciag.length());
+			int liczba2;
+			do
+			liczba2 = r.nextInt(liczba_ciag.length());
+			while(liczba1 == liczba2);
+			char znak1 = sb.charAt(liczba1);
+			char znak2 = sb.charAt(liczba2);
+			sb.setCharAt(liczba2, znak1);
+			sb.setCharAt(liczba1, znak2);	
+		}	
+		if (czy_ujemna)
+			return -Integer.parseInt(sb.toString());
+		else
+		return Integer.parseInt(sb.toString());
 	}
 }
