@@ -52,5 +52,19 @@ public class PsikusImplTest {
 		assertThat(p.Titit(51), is(false));
 		assertThat(p.Titit(62), is(false));
 	}
+	
+	@Test
+	public void HeheszkiTest()
+	{
+		assertThat(p.Heheszki(1), either(greaterThanOrEqualTo(0)).or(lessThan(1)));
+		assertThat(p.Heheszki(10), either(greaterThanOrEqualTo(0)).or(lessThan(10)));
+		assertThat(p.Heheszki(100), either(greaterThanOrEqualTo(0)).or(lessThan(100)));
+	}
+	
+	@Test
+	public void HultajChochlaTest()
+	{
+		
+	}
 
 }

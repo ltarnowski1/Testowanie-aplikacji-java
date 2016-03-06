@@ -67,8 +67,7 @@ public class PsikusImpl implements Psikus {
 	}
 
 	public Integer Heheszki(Integer liczba) {
-		r.nextInt(liczba);
-		return null;
+		return r.nextInt(liczba);
 	}
 	
 	public boolean Titit(Integer liczba_dziel) {
