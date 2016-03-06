@@ -41,7 +41,6 @@ public class PsikusImpl implements Psikus {
 			}	
 		}
 		
-
 		if(l.size() == 0)
 			return Integer.parseInt(sb.toString());
 		else
