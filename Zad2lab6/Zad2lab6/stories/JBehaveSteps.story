@@ -1,6 +1,6 @@
 Scenario:  Test largest
 Given an array by <array>
-Then getMax should equal <result>
+Then largest should equal <result>
 
 Examples:
 |array|result|
