@@ -81,7 +81,7 @@ public class WebSiteTest {
 		element = driver.findElement(By.id("user_email"));
 		element.clear();
 		element.click();
-		element.sendKeys("6@gmail.com");
+		element.sendKeys("7@gmail.com");
 		element = driver.findElement(By.id("user_password"));
 		element.clear();
 		element.click();
